@@ -18,3 +18,11 @@ export const getWallets = ()=> async dispatch=>{
       })
       
 }
+
+export const deleteWallet = (id)=> async dispatch=>{
+    await axios.delete('http://localhost:8888/wallet'+id)
+      .then((res) => {
+          dispatch({type:DELETE_WALLET.payload:id})
+      })
+      
+}
